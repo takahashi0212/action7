@@ -5,8 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <% if user_signed_in? %> 
+      <%= link_to current_user.nickname, "/users#{current_user.id}" %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path %>
+      <%= link_to "新規登録", new_user_registration_path %>
+    <% end %>
   </head>
 
   <body>

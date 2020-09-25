@@ -1,0 +1,12 @@
+<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
+<h1>ログイン</h1>
+<label>メールアドレス</label>
+<span>必須</span>
+<%= f.email_field :email %>
+
+<label>パスワード</label>
+<span>必須</span>
+<%= f.password_field :password %>
+
+ <%= f.submit "ログイン" %>
+<% end %>
