@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'posts/index'
-  root to: "posts#index"
-  resources :posts, only: [:new, :create]
+  get 'posts/top'
+  root to: "posts#top"
+  resources :posts, only: [:index, :new, :create]
 end
