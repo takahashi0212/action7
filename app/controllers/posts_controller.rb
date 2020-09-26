@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:top, :index]
   def index
     @posts = Post.all.order("created_at DESC")
   end
@@ -14,6 +14,9 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+
+    def top
     end
   end
 

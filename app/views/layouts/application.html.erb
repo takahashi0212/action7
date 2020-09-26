@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
+    <%= link_to "一覧表示", posts_path %>
     <% if user_signed_in? %> 
       <%= link_to current_user.nickname, "/users#{current_user.id}" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
