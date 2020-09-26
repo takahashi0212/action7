@@ -1,0 +1,9 @@
+<h1>詳細ページ</h1>
+  <% if @post.image.attached? %>
+    <%= image_tag @post.image.variant(resize:'450x450')  %>
+  <% end %>
+<h1>
+<%= @post.name %>
+</h1>
+<%= @post.description %>
+      <span><%= @post.price %>円</span>
