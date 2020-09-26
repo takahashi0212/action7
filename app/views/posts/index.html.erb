@@ -1,5 +1,14 @@
 <h1>Posts#index</h1>
 <div>
+
+<% @posts.each do |post| %>
+  <%= image_tag post.image.variant(resize:'200x200')%>
+
+  <%= post.name %>
+
+  <span><%= post.price %>円</span>
+<% end %>
+
   <a href="/posts/new">
     <span>投稿！</span>
   </a>
