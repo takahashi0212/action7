@@ -1,0 +1,29 @@
+<h1>投稿ページ</h1>
+<%= form_with model: @post, url: posts_path, local: true do |f| %>
+
+  出品画像
+  <span>必須</span>
+    <p>
+      クリックしてファイルをアップロード
+    </p>
+    <%= f.file_field :image %>
+
+  アイテム名
+  <span>必須</span>
+    <%= f.text_area :name, placeholder:"アイテム名（必須 40文字まで)" %>
+
+  説明
+  <span>必須</span>
+    <%= f.text_area :description, placeholder:"商品の説明（必須 1,000文字まで）" %>
+
+  カテゴリー
+  <span>必須</span>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}) %>
+
+  <span>価格</span>
+  <span>¥</span>
+    <%= f.text_field :price, placeholder:"半角数字で入力" %>
+
+  <%= f.submit "投稿する"%>
+  <%=link_to 'もどる', root_path%>
+<% end %>
