@@ -8,6 +8,7 @@
     <%= post.name %>
     <span><%= post.price %>円</span>
     
+  <% if user_signed_in? %>
     <td id="like-<%= post.id %>">
       <% if current_user.already_like?(post) %>
         <%= link_to '★', post_likes_path(post), method: :delete, remote: true %>
@@ -18,6 +19,7 @@
       <% end %>
       <%= post.likes.count %>
     </td>
+  <% end %>
   </div>
 <% end %>
 

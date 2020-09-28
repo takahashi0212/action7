@@ -2,18 +2,21 @@
   <% if @post.image.attached? %>
     <%= image_tag @post.image.variant(resize:'450x450')  %>
   <% end %>
-<h1>
-<%= @post.name %>
-</h1>
-<%= @post.description %>
-<span><%= @post.price %>円</span>
-<td id="like-<%= @post.id %>">
-<% if current_user.already_like?(@post) %>
-  <%= link_to '★', post_likes_path(@post), method: :delete, remote: true %>    
-</td>
-<% else %>
-<td id="like-<%= @post.id %>">
-  <%= link_to '☆',post_likes_path(@post), method: :post, remote: true %>
-</td>
-<% end %>
-<%= @post.likes.count %>
+  <h1>
+    <%= @post.name %>
+  </h1>
+    <%= @post.description %>
+    <span><%= @post.price %>円</span>
+
+  <% if user_signed_in? %>
+    <td id="like-<%= @post.id %>">
+      <% if current_user.already_like?(@post) %>
+        <%= link_to '★', post_likes_path(@post), method: :delete, remote: true %>    
+    </td>
+      <% else %>
+    <td id="like-<%= @post.id %>">
+        <%= link_to '☆',post_likes_path(@post), method: :post, remote: true %>
+    </td>
+      <% end %>
+        <%= @post.likes.count %>
+  <% end %>
