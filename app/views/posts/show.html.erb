@@ -6,4 +6,14 @@
 <%= @post.name %>
 </h1>
 <%= @post.description %>
-      <span><%= @post.price %>円</span>
+<span><%= @post.price %>円</span>
+<td id="like-<%= @post.id %>">
+<% if current_user.already_like?(@post) %>
+  <%= link_to '★', post_likes_path(@post), method: :delete, remote: true %>    
+</td>
+<% else %>
+<td id="like-<%= @post.id %>">
+  <%= link_to '☆',post_likes_path(@post), method: :post, remote: true %>
+</td>
+<% end %>
+<%= @post.likes.count %>

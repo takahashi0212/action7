@@ -6,9 +6,19 @@
     <%= image_tag post.image.variant(resize:'200x200') if post.image.attached?%>
   <% end %>
     <%= post.name %>
-
     <span><%= post.price %>円</span>
-  
+    
+    <td id="like-<%= post.id %>">
+      <% if current_user.already_like?(post) %>
+        <%= link_to '★', post_likes_path(post), method: :delete, remote: true %>
+    </td>  
+      <% else %>
+    <td id="like-<%= post.id %>">
+        <%= link_to '☆',post_likes_path(post), method: :post, remote: true %>
+      <% end %>
+      <%= post.likes.count %>
+    </td>
+  </div>
 <% end %>
 
   <a href="/posts/new">

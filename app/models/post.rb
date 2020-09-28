@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_one :messages
   belongs_to_active_hash :category
   has_one_attached :image
+  has_many :likes, dependent: :destroy
 
   #validates :category, presence: true
   #カテゴリーの選択が「--」の時は保存できないようにする
