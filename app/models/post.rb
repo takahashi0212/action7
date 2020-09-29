@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   belongs_to_active_hash :category
   has_one_attached :image
   has_many :likes, dependent: :destroy
+  belongs_to :user
 
   #validates :category, presence: true
   #カテゴリーの選択が「--」の時は保存できないようにする

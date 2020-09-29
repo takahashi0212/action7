@@ -11,7 +11,7 @@
     <%= link_to "トップページ", root_path %>
     <%= link_to "一覧表示", posts_path %>
     <% if user_signed_in? %> 
-      <%= link_to current_user.nickname, "/users#{current_user.id}" %>
+      <%= link_to current_user.nickname, "/posts/:post_id/likes/users/#{current_user.id}" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "ログイン", new_user_session_path %>
