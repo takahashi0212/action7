@@ -1,0 +1,22 @@
+<h2>
+  <%= current_user.nickname %>
+  さんのいいね一覧
+<h2>
+<% current_user.like_posts.each do |post| %>
+    <%= link_to post_path(post.id), method: :get do %>
+      <%= image_tag post.image.variant(resize:'200x200') if post.image.attached?%>
+    <% end %>
+      <%= post.name %>
+      <% if user_signed_in? %>
+    <td id="like-<%= post.id %>">
+      <% if current_user.already_like?(post) %>
+        <%= link_to '★', post_likes_path(post), method: :delete, remote: true %>
+    </td>  
+      <% else %>
+    <td id="like-<%= post.id %>">
+        <%= link_to '☆',post_likes_path(post), method: :post, remote: true %>
+      <% end %>
+      <%= post.likes.count %>
+    </td>
+    <% end %>
+<% end %>

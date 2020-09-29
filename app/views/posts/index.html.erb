@@ -1,5 +1,4 @@
 <h1>Posts#index</h1>
-<div>
 
 <% @posts.each do |post| %>
   <%= link_to post_path(post.id), method: :get do %>
@@ -20,7 +19,6 @@
       <%= post.likes.count %>
     </td>
   <% end %>
-  </div>
 <% end %>
 
   <a href="/posts/new">
