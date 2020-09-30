@@ -20,3 +20,22 @@
       <% end %>
         <%= @post.likes.count %>
   <% end %>
+
+  <% if current_user %>
+    <%= form_with(model: [@post, @message], local: true) do |form| %>
+      <%= form.text_area :comment, placeholder: "コメントする", rows: "2" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+  <% end %>
+
+  <h4>コメント一覧</h4>
+  <% if @messages %>
+    <% @messages.each do |message| %>
+      <p>
+        <strong><%= message.user.nickname %>：</strong>
+        <%= message.comment %>
+      </p>
+    <% end %>
+  <% end %>

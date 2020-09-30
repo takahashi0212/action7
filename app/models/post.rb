@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  has_one :messages
+  has_many :messages
   belongs_to_active_hash :category
   has_one_attached :image
   has_many :likes, dependent: :destroy
