@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:top, :index, :show]
+  before_action :authenticate_user!, except: [:top, :index, :show, :search]
+
   def index
     @posts = Post.all.order("created_at DESC")
   end
@@ -23,6 +24,10 @@ class PostsController < ApplicationController
 
   def top
     @post = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
   end
 
   private
