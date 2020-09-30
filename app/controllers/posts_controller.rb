@@ -20,6 +20,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @message = Message.new
+    @messages = @post.messages.includes(:user)
   end
 
   def top
