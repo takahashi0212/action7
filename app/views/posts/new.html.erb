@@ -1,29 +1,68 @@
-<h1>投稿ページ</h1>
-<%= form_with model: @post, url: posts_path, local: true do |f| %>
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>Post</h2>
+    </div>
+    <div class='account-page__inner--right user-form'>
+      <%= form_with model: @post, url: posts_path, local: true do |f| %>
+        <div class='field'>
+          <div class='field-label'>
+            <label>出品画像</label>
+            <span class="indispensable">必須</span>
+            <i>クリックしてファイルをアップロード</i>
+          </div>
+          <div class='field-input'>
+            <%= f.file_field :image %>
+          </div>
+        </div>
 
-  出品画像
-  <span>必須</span>
-    <p>
-      クリックしてファイルをアップロード
-    </p>
-    <%= f.file_field :image %>
+        <div class='field'>
+          <div class='field-label'>
+            <label>アイテム名</label>
+            <span class="indispensable">必須</span>
+          </div>
+            <div class='field-input'>
+              <%= f.text_field :name, placeholder:"アイテム名（必須 40文字まで)" %>
+            </div>
+        </div>
 
-  アイテム名
-  <span>必須</span>
-    <%= f.text_area :name, placeholder:"アイテム名（必須 40文字まで)" %>
+        <div class='field'>
+          <div class='field-label'>
+            <label>説明</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <div class='field-input'>
+              <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"アイテムの説明（必須 1,000文字まで）" %>
+          </div>
+        </div>
 
-  説明
-  <span>必須</span>
-    <%= f.text_area :description, placeholder:"商品の説明（必須 1,000文字まで）" %>
+        <div class='field'>
+          <div class='field-label'>
+            <label>カテゴリー</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <div class="form">
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+          </div>
+        </div>
 
-  カテゴリー
-  <span>必須</span>
-  <%= f.collection_select(:category_id, Category.all, :id, :name, {}) %>
+        <div class='field'>
+          <div class='field-label'>
+            <span>価格</span>
+          </div>
+          <div class='field-input'>
+          <%# <span>¥</span> %>
+              <%= f.text_field :price, placeholder:"半角数字で入力" %>
+          </div>
+        </div>
 
-  <span>価格</span>
-  <span>¥</span>
-    <%= f.text_field :price, placeholder:"半角数字で入力" %>
-
-  <%= f.submit "投稿する"%>
-  <%=link_to 'もどる', root_path%>
-<% end %>
+        <%# <div class='actions'> %>
+        <div class="sell-btn-contents">
+            <%= f.submit "投稿する", class: 'btn' %>
+            <%=link_to 'もどる', root_path, class: 'back-btn'%>
+          <%# </div> %>
+        </div>
+      <% end %>
+    </div>    
+  </div>
+</div>

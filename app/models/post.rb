@@ -6,6 +6,14 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   belongs_to :user
 
+  def self.search(search)
+    if search != ""
+      Post.where('name LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
+
   #validates :category, presence: true
   #カテゴリーの選択が「--」の時は保存できないようにする
   validates :category_id, numericality: { other_than: 0 }
