@@ -1,0 +1,132 @@
+h3 {
+  font-weight: bold;
+}
+.green {
+  background-color: rgb(0, 255, 0);
+  display: flex;
+  justify-content: space-around;
+}
+/* .green1 {
+  background-color: rgb(0, 255, 0);
+  display: flex;
+  justify-content: space-around;
+}
+.main1 {
+padding: 30px;
+margin-top: 210px;
+} */
+
+.text-top {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+.text-top:hover {
+  text-shadow: 0 0 10px #fff,0 0 15px #fff;
+}
+
+
+.box {
+  padding: 0.1em 1em;
+  margin: 1em 0;
+  font-weight: bold;
+  margin-left: 25px;
+}
+.box1 {
+  display: flex;
+}
+
+.main {
+  padding: 8px;
+ margin-top: 5px;
+ margin-right: 20px;
+}
+.main-name{
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+  font-family: 'arial black';
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  color: #00ff55;
+  border: solid 2px #00ff55;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn-flat-border:hover {
+  background: #00ff55;
+  color: white;
+}
+
+.waku {
+display: flex;
+margin-left: 40%;
+}
+
+.waku2 {
+  padding-left: 35px;
+}
+
+img {
+  padding: 5px;
+  border: 7px solid #00cc00;
+}
+
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+.item-img-content {
+  position: relative;
+}
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+.item-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+.item-name {
+  font-size: 2.5vh;
+}
+footer{
+  /*footerの装飾*/
+  width: 100%;
+  background-color: #00ff55;
+  color: #fff;
+  text-align: center;
+  padding: 35px;
+  margin-top: 13%;
+  height: 100%;
+}
+
+.btn-text-3d {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 37px;
+  color: #799dec;
+  text-shadow: 0px 4px 2px rgb(0, 183, 255), 0px 1px 0px rgb(0, 183, 255), 0px 2px 0px rgb(0, 183, 255), 0px 3px 0px rgb(0, 183, 255);
+}
+.btn-text-3d:active {
+  top: 4px;
+  text-shadow: none;
+}

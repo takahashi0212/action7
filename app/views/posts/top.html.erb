@@ -1,27 +1,54 @@
-<h1>トップページ</h1>
+<%# <h1>トップページ</h1>
 <a href="/posts/new">
     <span>投稿！</span>
-</a>
+</a> %>
 
-<% @post.each.with_index(1) do |post, i| %>
-    <h3>
-        <%= i %>
-        位
-    </h3>
-        <%= post.name %>
-            <%= link_to post_path(post.id), method: :get do %>
-                <%= image_tag post.image.variant(resize:'200x200') if post.image.attached?%>
-            <% end %>
-    <% if user_signed_in? %>
+
+<ul class='item-lists'>
+    <h3>Ranking</h3>
+    <% @post.each.with_index(1) do |post, i| %>
+    <li class='list'>
+        <h3>
+          <%= i %>
+          位
+        </h3>
+        <div class='item-info'>
+            <h3 class='item-name'>
+              <%= post.name %>
+            </h3>
+        </div>
+        <%= link_to post_path(post.id), method: :get do %>
+          <div class='item-img-content'>
+            <%= image_tag post.image.variant(resize:'200x200'), class: "item-img" if post.image.attached?%>
+          </div>
+        <% end %>
+
+        <% if user_signed_in? %>
         <td id="like-<%= post.id %>">
             <% if current_user.already_like?(post) %>
                 <%= link_to '★', post_likes_path(post), method: :delete, remote: true %>
         </td>  
             <% else %>
         <td id="like-<%= post.id %>">
-                <%= link_to '☆',post_likes_path(post), method: :post, remote: true %>
+            <%= link_to '☆',post_likes_path(post), method: :post, remote: true %>
             <% end %>
-                <%= post.likes.count %>
+            <%= post.likes.count %>
         </td>
+        <% end %>
     <% end %>
-<% end %>
+    </li>
+</ul>
+
+            <div class="waku">
+                <div class="waku1">
+                    <%= link_to "一覧表示", posts_path, class: "btn-flat-border" %>
+                </div>
+                <div class="waku2">
+                <% unless user_signed_in? %> 
+                    <%= link_to "ログイン", new_user_session_path, class: "btn-flat-border" %>
+                <% else %>
+                    <%= link_to current_user.nickname, "/posts/:post_id/likes/users/#{current_user.id}", class: "btn-text-3d" %>  
+                </div>
+                <% end %>
+                </div>
+            </div>

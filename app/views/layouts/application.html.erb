@@ -8,18 +8,41 @@
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= link_to "トップページ", root_path %>
-    <%= link_to "一覧表示", posts_path %>
-    <% if user_signed_in? %> 
-      <%= link_to current_user.nickname, "/posts/:post_id/likes/users/#{current_user.id}" %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "ログイン", new_user_session_path %>
-      <%= link_to "新規登録", new_user_registration_path %>
-    <% end %>
-  </head>
 
+  </head>
+<header>
+    <div class="green">
+      <div class="main">
+          <%= link_to "Camp Item", root_path, class: "main-name" %>
+        </div>
+        <div class="box1">
+          <div class="box">
+            <%= link_to "トップページ", root_path, class: "text-top" %>
+          </div>
+          <div class="box">
+            <%= link_to "一覧表示", posts_path, class: "text-top"  %>
+          </div>
+        <% if user_signed_in? %> 
+          <div class="box">
+            <%= link_to current_user.nickname, "/posts/:post_id/likes/users/#{current_user.id}", class: "text-top"  %>
+          </div>
+          <div class="box">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-top"  %>
+          </div>
+        <% else %>
+          <div class="box">
+            <%= link_to "ログイン", new_user_session_path, class: "text-top"  %>
+          </div>
+          <div class="box">
+            <%= link_to "新規登録", new_user_registration_path, class: "text-top"  %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</header>
   <body>
     <%= yield %>
+  <footer>
+    </footer>
   </body>
 </html>
