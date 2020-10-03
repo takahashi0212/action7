@@ -1,0 +1,125 @@
+.form-all {
+  display: flex;
+  margin-top: 20px;
+}
+.form-input {
+  background-color: white;
+  width: 100%;
+}
+
+.form-message {
+  border: 1px solid rgb(162, 238, 248);
+  height: 60px;
+  width: 602px;
+  padding-left: 10px;
+}
+
+.form-submit {
+  background-color: rgb(162, 238, 248);
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-top: 5px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+.form-submit:hover {
+  background-color: rgb(14, 221, 248);
+  border: none;
+  outline: 0;
+}
+
+.img-coment {
+display: flex;
+justify-content: space-around;
+margin-top: 25px;
+}
+.message-comment {
+  justify-content: space-around;
+  padding: 5px;
+  margin-top: 15px;
+  margin-left: 100px;
+}
+
+/* 詳細ページ */
+.detail-table {
+  margin: 30px 15px;
+  width: 40%;
+  position: absolute;
+  top: 500px;
+  left: 25px;
+}
+
+.detail-item {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
+/* 詳細ページ */
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.container h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #666;
+}
+
+.comment-content {
+  font-size: 20px;
+  border-bottom: 2px solid black;
+}
+.right-top {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  margin-bottom: 700px;
+}
+
+
+
+.box10 {
+  position: relative;
+  padding: 250px;
+  width: 250px;
+  height: 250px;
+}
+.box11 {
+  position: absolute;
+  bottom: 65px;
+  left: 470px;
+  display: flex;
+}
+.box13 {
+  position: relative;
+  bottom: 450px;
+  padding: 250px;
+}
+.box12 {
+position: absolute;
+left: 650px;
+top: 0px;
+}
+
+.img-left-top {
+  position: absolute;
+  bottom: 100px;
+  left: 40px;
+}

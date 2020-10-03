@@ -160,3 +160,9 @@
   display: flex;
   justify-content: space-around;
 }
+h1 {
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: 200;
+}
