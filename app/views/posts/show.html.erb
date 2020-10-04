@@ -1,41 +1,80 @@
-<h1>詳細ページ</h1>
-  <% if @post.image.attached? %>
-    <%= image_tag @post.image.variant(resize:'450x450')  %>
-  <% end %>
-  <h1>
-    <%= @post.name %>
-  </h1>
-    <%= @post.description %>
-    <span><%= @post.price %>円</span>
-
-  <% if user_signed_in? %>
-    <td id="like-<%= @post.id %>">
-      <% if current_user.already_like?(@post) %>
-        <%= link_to '★', post_likes_path(@post), method: :delete, remote: true %>    
-    </td>
-      <% else %>
-    <td id="like-<%= @post.id %>">
-        <%= link_to '☆',post_likes_path(@post), method: :post, remote: true %>
-    </td>
+<%# <div class="wrapper"> %>
+    <div class="box10">
+      <% if @post.image.attached? %>
+        <%= image_tag @post.image.variant(resize:'350x350'), class: "img-left-top"  %>
       <% end %>
-        <%= @post.likes.count %>
-  <% end %>
-
-  <% if current_user %>
-    <%= form_with(model: [@post, @message], local: true) do |form| %>
-      <%= form.text_area :comment, placeholder: "コメントする", rows: "2" %>
-      <%= form.submit "SEND" %>
-    <% end %>
-  <% else %>
+ 
+      <div class="box11">
+        <% if user_signed_in? %>
+            <td id="like-<%= @post.id %>">
+              <% if current_user.already_like?(@post) %>
+                <%= link_to '★', post_likes_path(@post), method: :delete, class:"star-icon2", remote: true %>    
+            </td>
+              <% else %>
+            <td id="like-<%= @post.id %>">
+                <%= link_to '☆',post_likes_path(@post), method: :post, class:"star-icon2", remote: true %>
+            </td>
+              <% end %>
+              <div class="count-num">
+                <%= @post.likes.count %>
+              </div>
+        <% end %>
+      </div>
+    </div>
+       
+<div class="box13">
+  <div class="box12">
+        <% if current_user %>
+      <div class="form-all">
+        <div class="form-input">
+            <%= form_with(model: [@post, @message], local: true) do |form| %>
+            <%= form.text_area :comment, class: "form-message", placeholder: "コメントする", rows: "2" %>
+            <div class="container">
+              <div class="message-comment">
+                <h4 class="comment-content">＜コメント一覧＞</h4>
+                  <% if @messages %>
+                    <% @messages.reverse.each do |message| %>
+                      <p>
+                        <strong><%= message.user.nickname %>：</strong>
+                        <%= message.comment %>
+                      </p>
+                    <% end %>
+                  <% end %>
+              </div>
+            </div>
+        </div>
+            <%= form.submit "SEND", class: "form-submit" %>
+            <% end %>
+      </div>
+            
+    <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-  <% end %>
-
-  <h4>コメント一覧</h4>
-  <% if @messages %>
-    <% @messages.each do |message| %>
-      <p>
-        <strong><%= message.user.nickname %>：</strong>
-        <%= message.comment %>
-      </p>
     <% end %>
-  <% end %>
+    </div>
+</div>
+  <table class="detail-table">
+    <tr>
+      <th class="detail-item">投稿者</td>
+      <td class="detail-value"><%= @post.user.nickname %></td>
+    </tr>
+    <tr>
+      <th class="detail-item">アイテム名</td>
+      <td class="detail-value"><%= @post.name %></td>
+    </tr>
+    <tr>
+      <th class="detail-item">説明</th>
+      <td class="detail-value"><%= @post.description %></td>
+    <tr>
+    </tr>
+      <th class="detail-item">カテゴリー</th>
+      <td class="detail-value"><%= @post.category.name%></td>
+    </tr>
+    <tr>
+      <th class="detail-item">価格</th>
+      <td class="detail-value"><%= @post.price %>円</td>
+    </tr>
+  </table>
+<%# </div> %>
+<% if user_signed_in? && current_user.id == @post.user_id %>
+  <%= link_to '削除', post_path(@post.id),class: "btn-flat-border3", method: :delete %>
+<% end %>

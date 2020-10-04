@@ -1,0 +1,125 @@
+.search-form {
+  text-align: center;
+  padding-top: 12px;
+  margin: 25px 0 50px 0;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+  height: 40px;
+  border-radius: 20px;
+  outline: 0;
+  padding: 0 10px;
+  border: solid 4px rgb(0, 255, 13);
+}
+.search-form .search-btn {
+  width: 10%;
+}
+
+.search-btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #00b445;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #006828;
+  border-radius: 27px;
+  outline: 0;
+}
+.search-btn:active {
+ /*ボタンを押したとき*/
+ -webkit-transform: translateY(4px);
+ transform: translateY(4px);/*下に動く*/
+ border-bottom: none;/*線を消す*/
+}
+
+.space {
+  width: 73%;
+  display: flex;
+  justify-content: space-between;
+}
+.space2 {
+  width: 500px;
+}
+
+.space3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.space-item{
+display: flex;
+}
+.space-item2{
+  display: flex;
+  margin-left: 500px;
+  }
+
+.star-icon {
+  text-decoration: none;
+  color: gold;
+}
+.star-icon2 {
+  text-decoration: none;
+  color: gold;
+  font-size: 25px;
+}
+
+.count-num {
+  font-size: 25px;
+}
+/* .item-img {
+  width: 200px;
+  height: 200px;
+} */
+
+.post-area{
+  margin-left: 85%;
+}
+
+.item-lists2 {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.item-lists2>.list2 {
+  width: 37vh;
+  padding: 1vw;
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  color: #00ff55;
+  border: solid 2px #00ff55;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn-flat-border:hover {
+  background: #00ff55;
+  color: white;
+}
+
+.btn-flat-border3 {
+  display: inline-block;
+  padding: 0.5em 0.6em;
+  position: absolute;
+  left: 43px;
+  bottom: 195px;
+  text-decoration: none;
+  color: #ff3300;
+  border: solid 2px #ff3300;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn-flat-border3:hover {
+  background: #ff3300;
+  color: white;
+}

@@ -1,18 +1,27 @@
 <%= link_to post_path(post.id), method: :get do %>
-    <%= image_tag post.image.variant(resize:'200x200') if post.image.attached?%>
+  <div class='item-img-content'>
+    <%= image_tag post.image.variant(resize:'150x150'), class: "item-img2" if post.image.attached?%>
+  </div>
   <% end %>
+
+ <div class="space">
     <%= post.name %>
-    <span><%= post.price %>円</span>
     
-  <% if user_signed_in? %>
-    <td id="like-<%= post.id %>">
-      <% if current_user.already_like?(post) %>
-        <%= link_to '★', post_likes_path(post), method: :delete, remote: true %>
-    </td>  
-      <% else %>
-    <td id="like-<%= post.id %>">
-        <%= link_to '☆',post_likes_path(post), method: :post, remote: true %>
+    <div class="space-item">
+  
+      <% if user_signed_in? %>
+        <td id="like-<%= post.id %>">
+          <% if current_user.already_like?(post) %>
+              <%= link_to '★', post_likes_path(post), method: :delete, class:"star-icon", remote: true %>
+        </td>  
+          <% else %>
+        <td id="like-<%= post.id %>">
+              <%= link_to '☆',post_likes_path(post), method: :post, class:"star-icon", remote: true %>
+          <% end %>
+        </td>
+            <%= post.likes.count %>
+        
       <% end %>
-      <%= post.likes.count %>
-    </td>
-  <% end %>
+    </div>
+  </div>
+

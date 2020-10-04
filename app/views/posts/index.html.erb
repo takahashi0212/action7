@@ -1,15 +1,21 @@
-<h1>Posts#index</h1>
+<div class="wrapper">
 <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |f| %>
-  <%= f.text_field :keyword, placeholder: "検索する", class: "search-input" %>
+  <%= f.text_field :keyword, placeholder: "キーワードを検索する", class:"search-input"  %>
   <%= f.submit "検索", class: "search-btn" %>
 <% end %>
+ <ul class='item-lists2'>
+    <% @posts.each do |post| %>
+      <li class='list2'>
+        <%= render partial: "post", locals: { post: post } %>
+      </li>
+    <% end %>
+</ul>
 
-<% @posts.each do |post| %>
-  <%= render partial: "post", locals: { post: post } %>
-<% end %>
 
-
-  <a href="/posts/new">
-    <span>投稿！</span>
-  </a>
+<div class="post-area">
+    <a href="/posts/new">
+      <span class="btn-flat-border">投稿！</span>
+    </a>
+  </div>
+</div>
 </div>
