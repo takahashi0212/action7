@@ -66,3 +66,7 @@ gem 'jquery-rails'
 
 gem 'ransack'
 gem 'faker'
+
+group :production do
+  gem 'rails_12factor'
+end
