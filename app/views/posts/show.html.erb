@@ -76,5 +76,6 @@
   </table>
 <%# </div> %>
 <% if user_signed_in? && current_user.id == @post.user_id %>
-  <%= link_to '削除', post_path(@post.id),class: "btn-flat-border3", method: :delete %>
+  <%= link_to '削除', post_path(@post.id), class: "btn-flat-border3", method: :delete %>
+  <%= link_to '編集', edit_post_path(@post.id), class: "btn-flat-border4", method: :get %>
 <% end %>
