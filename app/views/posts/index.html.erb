@@ -3,9 +3,9 @@
   <%= f.text_field :keyword, placeholder: "キーワードを検索する", class:"search-input"  %>
   <%= f.submit "検索", class: "search-btn" %>
 <% end %>
- <ul class='item-lists'>
+ <ul class='item-lists2'>
     <% @posts.each do |post| %>
-      <li class='list'>
+      <li class='list2'>
         <%= render partial: "post", locals: { post: post } %>
       </li>
     <% end %>

@@ -2,57 +2,56 @@
 <a href="/posts/new">
     <span>投稿！</span>
 </a> %>
-
+<div class="back-color">
 <h2>Ranking</h2>
-<ul class='item-lists'>
-    
+  <ul class='item-lists'>
     <% @post.each.with_index(1) do |post, i| %>
     
-    <li class='list'>
+        <li class='list'>
         <h3>
-        <%= i %>
-        位
+            <%= i %>
+            位
         </h3>
         <%= link_to post_path(post.id), method: :get do %>
-          <div class='item-img-content'>
+            <div class='item-img-content'>
             <%= image_tag post.image.variant(resize:'200x200'), class: "item-img" if post.image.attached?%>
-          </div>
+            </div>
         <% end %>
-       
-             <div class="space">
+            
+        <div class="space3">
             <%= post.name %>
             <div class="space-item">
-
-        <% if user_signed_in? %>
-        <td id="like-<%= post.id %>">
-            <% if current_user.already_like?(post) %>
-                <%= link_to '★', post_likes_path(post), method: :delete, class:"star-icon", remote: true %>
-        </td>  
-            <% else %>
-        <td id="like-<%= post.id %>">
-            <%= link_to '☆',post_likes_path(post), method: :post, class:"star-icon", remote: true %>
-            <% end %>
-            <%= post.likes.count %>
-        </td>
-        <% end %>
-    <% end %>
-    </div>
-    </div>
-    </li>
-</ul>
+                <% if user_signed_in? %>
+                    <td id="like-<%= post.id %>">
+                    <% if current_user.already_like?(post) %>
+                        <%= link_to '★', post_likes_path(post), method: :delete, class:"star-icon", remote: true %>
+                    </td>  
+                    <% else %>
+                    <td id="like-<%= post.id %>">
+                        <%= link_to '☆',post_likes_path(post), method: :post, class:"star-icon", remote: true %>
+                    <% end %>
+                        <%= post.likes.count %>
+                    </td>
+                <% end %>
+            </div>
+        </div>
+        </li>
+    <% end %> 
+  </ul>
 
             <div class="waku">
                 <div class="waku1">
-                    <%= link_to "一覧表示", posts_path, class: "btn-flat-border" %>
+                    <%= link_to "一覧表示", posts_path, class: "btn-flat-border2" %>
                 </div>
                 <div class="waku2">
-                <% unless user_signed_in? %> 
-                    <%= link_to "ログイン", new_user_session_path, class: "btn-flat-border" %>
-                <% else %>
-                    <%= link_to current_user.nickname, "/posts/:post_id/likes/users/#{current_user.id}", class: "btn-text-3d" %>  
+                    <% unless user_signed_in? %> 
+                        <%= link_to "ログイン", new_user_session_path, class: "btn-flat-border2" %> 
+                    <% else %>
+                        <%= link_to "投稿！", new_post_path, class: "btn-flat-border2" %>
+                    <% end %>
                 </div>
-                <% end %>
-                </div>
+                
             </div>
+        </div>
 
-          
+</div>

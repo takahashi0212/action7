@@ -1,9 +1,9 @@
 <%# <div class="wrapper"> %>
     <div class="box10">
       <% if @post.image.attached? %>
-        <%= image_tag @post.image.variant(resize:'450x450'), class: "img-left-top"  %>
+        <%= image_tag @post.image.variant(resize:'350x350'), class: "img-left-top"  %>
       <% end %>
-
+ 
       <div class="box11">
         <% if user_signed_in? %>
             <td id="like-<%= @post.id %>">
@@ -21,7 +21,7 @@
         <% end %>
       </div>
     </div>
-      
+       
 <div class="box13">
   <div class="box12">
         <% if current_user %>
@@ -71,3 +71,4 @@
     </tr>
   </table>
 <%# </div> %>
+<%= link_to '削除', post_path(@post.id), method: :delete %>

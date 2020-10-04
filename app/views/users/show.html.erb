@@ -1,22 +1,36 @@
-<h2>
+<h5>
   <%= current_user.nickname %>
   さんのいいね一覧
-<h2>
+</h5>
+
 <% current_user.like_posts.each do |post| %>
-    <%= link_to post_path(post.id), method: :get do %>
-      <%= image_tag post.image.variant(resize:'200x200') if post.image.attached?%>
-    <% end %>
-      <%= post.name %>
-      <% if user_signed_in? %>
-    <td id="like-<%= post.id %>">
-      <% if current_user.already_like?(post) %>
-        <%= link_to '★', post_likes_path(post), method: :delete, remote: true %>
-    </td>  
-      <% else %>
-    <td id="like-<%= post.id %>">
-        <%= link_to '☆',post_likes_path(post), method: :post, remote: true %>
-      <% end %>
-      <%= post.likes.count %>
-    </td>
-    <% end %>
+      <div class="contents-box">
+        <div class="box5">
+            <%= link_to post_path(post.id), method: :get do %>
+              <%= image_tag post.image.variant(resize:'200x200'), class: "item-img3" if post.image.attached?%>
+            
+                <div class="space-item3">
+                    <% if user_signed_in? %>
+                      <td id="like-<%= post.id %>">
+                        <% if current_user.already_like?(post) %>
+                          <%= link_to '★', post_likes_path(post), method: :delete, class:"star-icon3", remote: true %>
+                      </td>  
+                        <% else %>
+                      <td id="like-<%= post.id %>">
+                          <%= link_to '☆',post_likes_path(post), method: :post, class:"star-icon3", remote: true %>
+                        <% end %>
+                          <%= post.likes.count %>
+                      </td>
+                    <% end %>
+                </div>
+
+            <% end %>
+
+            <div class="box15">
+              <%= post.name %>
+            </div>
+
+        </div>    
+      </div>
+  
 <% end %>

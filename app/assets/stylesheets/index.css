@@ -1,7 +1,6 @@
 .search-form {
   text-align: center;
   padding-top: 12px;
-  /* border-radius: 20px; */
   margin: 25px 0 50px 0;
 }
 
@@ -34,53 +33,23 @@
  transform: translateY(4px);/*下に動く*/
  border-bottom: none;/*線を消す*/
 }
-/* 
-.item-info {
-  background-color: #FFF;
-  color: black;
-  padding: 1vw;
-  display: flex;
-  justify-content: space-between;
-}
-.item-name {
-  font-size: 2.5vh;
-}
 
-
-.star-btn {
-  display: flex;
-  margin-left: 85px;
-  align-items: center;
-  margin-bottom: 50%;
-}
-
-.star-icon {
-  height: 2vh;
-  width: 2vh;
-  font-size: 20px;
-  text-decoration: none;
-  margin-right: 0.5vw;
-  margin-left: 19px;
- 
-}
-.star-count {
-  margin-left: 3px;
-} */
 .space {
-  width: 90%;
+  width: 73%;
   display: flex;
   justify-content: space-between;
 }
 .space2 {
   width: 500px;
-  /* display: flex; */
-  /* justify-content: space-between; */
+}
 
+.space3 {
+  display: flex;
+  justify-content: space-between;
 }
 
 .space-item{
 display: flex;
-margin-left: 48px;
 }
 .space-item2{
   display: flex;
@@ -107,4 +76,31 @@ margin-left: 48px;
 
 .post-area{
   margin-left: 85%;
+}
+
+.item-lists2 {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.item-lists2>.list2 {
+  width: 37vh;
+  padding: 1vw;
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  color: #00ff55;
+  border: solid 2px #00ff55;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn-flat-border:hover {
+  background: #00ff55;
+  color: white;
 }

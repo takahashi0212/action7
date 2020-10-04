@@ -1,6 +1,6 @@
 <%= link_to post_path(post.id), method: :get do %>
   <div class='item-img-content'>
-    <%= image_tag post.image.variant(resize:'200x200') if post.image.attached?%>
+    <%= image_tag post.image.variant(resize:'150x150'), class: "item-img2" if post.image.attached?%>
   </div>
   <% end %>
 
