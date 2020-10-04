@@ -104,3 +104,22 @@ display: flex;
   background: #00ff55;
   color: white;
 }
+
+.btn-flat-border3 {
+  display: inline-block;
+  padding: 0.5em 0.6em;
+  position: absolute;
+  left: 43px;
+  bottom: 195px;
+  text-decoration: none;
+  color: #ff3300;
+  border: solid 2px #ff3300;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn-flat-border3:hover {
+  background: #ff3300;
+  color: white;
+}
