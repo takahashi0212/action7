@@ -65,3 +65,4 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 
 gem 'ransack'
+gem 'faker'

@@ -15,7 +15,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :nickname, length: { maximum: 20 }
     validates :email, uniqueness: {case_sensitive: true}, format: { with: VALID_EMAIL_REGEX }
-    validates :password, length: {minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }
+    validates :password, length: {minimum: 8 }, format: { with: VALID_PASSWORD_REGEX }
   end
 
   def already_like?(post)
