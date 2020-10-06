@@ -12,11 +12,11 @@
       <% if user_signed_in? %>
         <td id="like-<%= post.id %>">
           <% if current_user.already_like?(post) %>
-              <%= link_to '★', post_likes_path(post), method: :delete, class:"star-icon", remote: true %>
+              <%= link_to '★', post_likes_path(post), method: :delete, class:"star-icon1", remote: true %>
         </td>  
           <% else %>
         <td id="like-<%= post.id %>">
-              <%= link_to '☆',post_likes_path(post), method: :post, class:"star-icon", remote: true %>
+              <%= link_to '☆',post_likes_path(post), method: :post, class:"star-icon1", remote: true %>
           <% end %>
         </td>
             <%= post.likes.count %>

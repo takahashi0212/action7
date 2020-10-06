@@ -60,6 +60,10 @@ display: flex;
   text-decoration: none;
   color: rgb(251, 255, 0);
 }
+.star-icon1 {
+  text-decoration: none;
+  color: gold;
+}
 .star-icon2 {
   text-decoration: none;
   color: gold;
