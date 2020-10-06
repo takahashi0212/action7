@@ -58,7 +58,7 @@ display: flex;
 
 .star-icon {
   text-decoration: none;
-  color: gold;
+  color: rgb(251, 255, 0);
 }
 .star-icon2 {
   text-decoration: none;
@@ -69,10 +69,6 @@ display: flex;
 .count-num {
   font-size: 25px;
 }
-/* .item-img {
-  width: 200px;
-  height: 200px;
-} */
 
 .post-area{
   margin-left: 85%;

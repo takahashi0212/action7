@@ -51,16 +51,13 @@
             <span>価格</span>
           </div>
           <div class='field-input'>
-          <%# <span>¥</span> %>
               <%= f.text_field :price, placeholder:"半角数字で入力" %>
           </div>
         </div>
 
-        <%# <div class='actions'> %>
         <div class="sell-btn-contents">
             <%= f.submit '変更', class: 'btn' %>
             <%=link_to 'もどる', post_path, class: 'back-btn'%>
-          <%# </div> %>
         </div>
       <% end %>
     </div>    

@@ -8,7 +8,6 @@
         <div class="box5">
             <%= link_to post_path(post.id), method: :get do %>
               <%= image_tag post.image.variant(resize:'200x200'), class: "item-img3" if post.image.attached?%>
-            
                 <div class="space-item3">
                     <% if user_signed_in? %>
                       <td id="like-<%= post.id %>">
@@ -23,7 +22,6 @@
                       </td>
                     <% end %>
                 </div>
-
             <% end %>
 
             <div class="box15">

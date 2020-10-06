@@ -1,5 +1,3 @@
-
-
 .form-all {
   display: flex;
   margin-top: 20px;
@@ -111,7 +109,6 @@ margin-top: 25px;
 .box13 {
   position: relative;
   bottom: 450px;
-  padding: 250px;
 }
 .box12 {
 position: absolute;
