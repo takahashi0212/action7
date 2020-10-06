@@ -7,16 +7,17 @@ Camp Item
 # URL
 
 # テスト用アカウント
-
+id: test@aaa.com
+Ps: aaaa1111
 # 利用方法
 ログインする事で自分のお気に入りのアウトドア用品の写真を投稿できます。
 
 # 実装予定の機能
-・お気に入り機能の実装
-・コメント機能の実装
+・カテゴリー検索機能
+・JavaScriptを使ったページ表示機能
 
 # ER図
-https://gyazo.com/01c2b8b69659834e834aba49bfa1a997
+https://gyazo.com/356adf76f805262f41888015b09c03ba
 
 # テーブル設計
 

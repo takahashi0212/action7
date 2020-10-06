@@ -121,3 +121,11 @@ top: 0px;
   bottom: 100px;
   left: 40px;
 }
+
+.comment-size {
+  width: 500px;
+  margin-bottom: 5px;
+}
+.cancel {
+  border: initial;
+}

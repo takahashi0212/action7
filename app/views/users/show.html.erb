@@ -24,11 +24,16 @@
                 </div>
             <% end %>
 
-            <div class="box15">
+              <div class="box-description">
+                <span class="description-size">アイテム説明</span>
+                  <div class="description-item">
+                    <%= post.description %>
+                  </div>
+              </div>
+        </div>  
+        <div class="box15">
               <%= post.name %>
-            </div>
-
-        </div>    
+        </div>
       </div>
-  
+        
 <% end %>

@@ -33,7 +33,7 @@
                 <h4 class="comment-content">＜コメント一覧＞</h4>
                   <% if @messages %>
                     <% @messages.reverse.each do |message| %>
-                      <p>
+                      <p class="comment-size">
                         <strong><%= message.user.nickname %>：</strong>
                         <%= message.comment %>
                       </p>

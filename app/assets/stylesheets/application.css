@@ -18,3 +18,19 @@
   box-sizing: border-box;
 }
 /* *= require font-awesome */
+
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
