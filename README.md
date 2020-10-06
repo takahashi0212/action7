@@ -5,10 +5,11 @@ Camp Item
 ユーザーがアウトドア用品の画像を投稿し、それに対してお気に入りやコメントができます。
 
 # URL
+https://action7.herokuapp.com
 
 # テスト用アカウント
-id: test@aaa.com
-Ps: aaaa1111
+テストID: test@aaa.com
+テストPASS: aaaa1111
 # 利用方法
 ログインする事で自分のお気に入りのアウトドア用品の写真を投稿できます。
 
