@@ -1,0 +1,11 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+     post:
+       image: 画像
+       name: アイテム名
+       description: 説明欄
+       category_id: カテゴリー
+       price: 値段
