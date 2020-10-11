@@ -2,6 +2,32 @@
       <% if @post.image.attached? %>
         <%= image_tag @post.image.variant(resize:'350x350'), class: "img-left-top"  %>
       <% end %>
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <%= link_to '削除', post_path(@post.id), class: "btn-flat-border3", method: :delete %>
+        <%= link_to '編集', edit_post_path(@post.id), class: "btn-flat-border4", method: :get %>
+      <% end %>
+  <table class="detail-table">
+    <tr>
+      <th class="detail-item">投稿者</td>
+      <td class="detail-value"><%= @post.user.nickname %></td>
+    </tr>
+    <tr>
+      <th class="detail-item">アイテム名</td>
+      <td class="detail-value"><%= @post.name %></td>
+    </tr>
+    <tr>
+      <th class="detail-item">説明</th>
+      <td class="detail-value"><%= @post.description %></td>
+    <tr>
+    </tr>
+      <th class="detail-item">カテゴリー</th>
+      <td class="detail-value"><%= @post.category.name%></td>
+    </tr>
+    <tr>
+      <th class="detail-item">価格</th>
+      <td class="detail-value"><%= @post.price %>円</td>
+    </tr>
+  </table>
  
       <div class="box11">
         <% if user_signed_in? %>
@@ -51,29 +77,5 @@
     <% end %>
     </div>
 </div>
-  <table class="detail-table">
-    <tr>
-      <th class="detail-item">投稿者</td>
-      <td class="detail-value"><%= @post.user.nickname %></td>
-    </tr>
-    <tr>
-      <th class="detail-item">アイテム名</td>
-      <td class="detail-value"><%= @post.name %></td>
-    </tr>
-    <tr>
-      <th class="detail-item">説明</th>
-      <td class="detail-value"><%= @post.description %></td>
-    <tr>
-    </tr>
-      <th class="detail-item">カテゴリー</th>
-      <td class="detail-value"><%= @post.category.name%></td>
-    </tr>
-    <tr>
-      <th class="detail-item">価格</th>
-      <td class="detail-value"><%= @post.price %>円</td>
-    </tr>
-  </table>
-<% if user_signed_in? && current_user.id == @post.user_id %>
-  <%= link_to '削除', post_path(@post.id), class: "btn-flat-border3", method: :delete %>
-  <%= link_to '編集', edit_post_path(@post.id), class: "btn-flat-border4", method: :get %>
-<% end %>
+  
+
