@@ -5,7 +5,7 @@ Camp Item
 ユーザーがアウトドア用品の画像を投稿し、それに対してお気に入りやコメントができます。
 
 # URL
-https://action7.herokuapp.com
+http://18.177.196.208
 
 # テスト用アカウント
 テストID: test@aaa.com
@@ -18,7 +18,7 @@ https://action7.herokuapp.com
 ・JavaScriptを使ったページ表示機能
 
 # ER図
-https://gyazo.com/356adf76f805262f41888015b09c03ba
+https://gyazo.com/cd741decf9024d391e0f2fcd365208d7
 
 # テーブル設計
 
